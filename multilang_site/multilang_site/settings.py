@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -104,13 +106,17 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-us'  # Langue par défaut
+LANGUAGE_CODE = 'fr'
+# Activer l'internationalisation
 
-TIME_ZONE = 'UTC'
 
-USE_I18N = True
 
-USE_TZ = True
+USE_I18N = True  # Activer l'internationalisation
+
+USE_L10N = True  # Activer la localisation
+
+USE_TZ = True  # Activer la gestion des fuseaux horaires
 
 
 # Static files (CSS, JavaScript, Images)
@@ -122,3 +128,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Ajouter les langues supportées
+LANGUAGES = [
+    ('en', _('English')),
+    ('fr', _('French')),
+    # Ajoutez d'autres langues selon vos besoins
+]
+# Configurer le chemin vers les fichiers de traduction
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
