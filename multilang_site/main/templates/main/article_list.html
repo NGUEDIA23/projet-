@@ -1,16 +1,20 @@
+
+{% load i18n %}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Articles de Blog</title>
+    <meta charset="UTF-8">
+    <title>{% trans "Article List" %}</title>
 </head>
 <body>
-    <h1>Articles de Blog</h1>
+    <h1>{% trans "Article List" %}</h1>
     <ul>
         {% for article in articles %}
             <li>
                 <h2>{{ article.title }}</h2>
-                <p>{{ article.publication_date }}</p>
                 <p>{{ article.content }}</p>
+                <p><em>{% trans "Published on" %} {{ article.publication_date }}</em></p>
             </li>
         {% endfor %}
     </ul>
