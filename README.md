@@ -27,7 +27,13 @@ Projet Multilang est une application web permettant aux utilisateurs d'explorer 
    git clone [https://github.com/votre-utilisateur/projet-multilang.git](https://github.com/NGUEDIA23/projet-.git)](https://github.com/NGUEDIA23/projet-.git)
    cd projet-multilang/
    pipprojet- install
-   Activer l'environnement virtuel :
+   git clone [https://github.com/votre-utilisateur/projet-multilang.git](https://github.com/NGUEDIA23/projet-.git)](https://github.com/NGUEDIA23/projet-.git)
+cd projet-multilang/
+pipprojet- install
+Activer l'environnement virtuel :
+   pipprojet-shell
+
+   ## Activer l'environnement virtuel :
       pipprojet-shell
 
   ## Configurer les variables d'environnement :
