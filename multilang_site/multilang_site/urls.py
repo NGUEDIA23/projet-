@@ -24,6 +24,6 @@ urlpatterns = [
     path('', home, name='home'), 
 ]
 urlpatterns += i18n_patterns(
-    path('', include('main.urls')),  # Inclure les URLs de votre application principale
+    path('articles/', include('main.urls')),  # Inclure les URLs de votre application principale
     # Ajoutez d'autres URLs internationalisées si nécessaire
 )

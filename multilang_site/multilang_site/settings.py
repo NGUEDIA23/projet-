@@ -49,9 +49,9 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # Ensure this middleware is included
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 ROOT_URLCONF = 'multilang_site.urls'
 
 TEMPLATES = [
@@ -108,6 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'  # Langue par défaut
 LANGUAGE_CODE = 'fr'
+TIME_ZONE = 'UTC' 
 # Activer l'internationalisation
 
 
@@ -130,8 +131,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Ajouter les langues supportées
 LANGUAGES = [
-    ('en', _('English')),
-    ('fr', _('French')),
+    ('en', 'English'),
+    ('fr', 'French'),
     # Ajoutez d'autres langues selon vos besoins
 ]
 # Configurer le chemin vers les fichiers de traduction

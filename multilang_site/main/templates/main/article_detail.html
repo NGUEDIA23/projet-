@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{% get_current_language as LANGUAGE_CODE %}">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ article.title }}</h1>
+        <p><em>{% trans "Published on" %} {{ article.publication_date }}</em></p>
+    </header>
+    
+    <main>
+        <article>
+            <p>{{ article.content }}</p>
+        </article>
+        <a href="{% url 'article_list' %}">{% trans "Back to Article List" %}</a>
+    </main>
+
+    <footer>
+        <p>{% trans "Copyright © 2024. All rights reserved." %}</p>
+    </footer>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
