@@ -11,6 +11,18 @@
     <header>
         <h1>{% trans "Article List" %}</h1>
         <p>{% blocktrans %}Welcome to our blog. Here you can find the latest articles.{% endblocktrans %}</p>
+        <form action="{% url 'change_language' %}" method="get">
+            <select name="language" onchange="this.form.submit()">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% for lang_code, lang_name in LANGUAGES %}
+                    <option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ lang_name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
+        
     </header>
     
     <main>
