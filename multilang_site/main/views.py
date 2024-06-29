@@ -91,6 +91,7 @@ def search_with_rag(request):
             }
             return render(request, 'search_results.html', context)
         except Exception as e:
+            
             # Gérer les erreurs d'initialisation du retriever
             return HttpResponse(f"Erreur lors de l'initialisation du retriever : {e}")
     else:
